@@ -1,35 +1,29 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
+import { AppButton } from "@/components/shared/AppButton";
+import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
+    <div className="flex flex-col items-center justify-center min-h-screen p-4 space-y-8 bg-gray-50 dark:bg-zinc-950">
+      <h1 className="text-4xl font-bold text-gray-900 dark:text-white">
+        Sakura ERP
+      </h1>
+      <p className="text-lg text-gray-600 dark:text-gray-300">
+        Inventory & Formulation Management System
       </p>
-    </>
-  )
+
+      <div className="p-8 space-y-4 bg-white dark:bg-zinc-900 rounded-xl shadow-sm border border-gray-200 dark:border-zinc-800">
+        <p className="text-center font-medium">Interactive Demo</p>
+        <div className="flex justify-center">
+          <AppButton onClick={() => setCount((c) => c + 1)}>
+            Count is {count}
+          </AppButton>
+        </div>
+      </div>
+    </div>
+  );
 }
 
-export default App
+export default App;
