@@ -1,5 +1,6 @@
 import * as React from "react";
-import { Input, InputProps } from "@/components/ui/input";
+import { Input } from "@/components/ui/input";
+import type { InputProps } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 
 export interface AppInputProps extends InputProps {
@@ -9,7 +10,8 @@ export interface AppInputProps extends InputProps {
 
 export const AppInput = React.forwardRef<HTMLInputElement, AppInputProps>(
   ({ className, label, error, id, ...props }, ref) => {
-    const inputId = id || Math.random().toString(36).substring(7);
+    const internalId = React.useId();
+    const inputId = id || internalId;
 
     return (
       <div className="grid w-full max-w-sm items-center gap-1.5">
