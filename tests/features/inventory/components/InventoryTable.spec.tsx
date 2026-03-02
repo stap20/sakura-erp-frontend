@@ -1,6 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import { InventoryTable } from "@/features/inventory/components/InventoryTable";
 import { MaterialType } from "@/features/inventory/types";
+import { describe, it, expect } from "vitest";
 
 describe("InventoryTable", () => {
   const mockData = [

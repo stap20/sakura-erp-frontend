@@ -2,7 +2,6 @@ import { render, screen } from "@testing-library/react";
 import { describe, it, expect } from "vitest";
 import { AppTable } from "@/components/shared/AppTable";
 import type { ColumnDef } from "@/components/shared/AppTable";
-import * as React from "react";
 
 describe("AppTable Component", () => {
   type MockData = {
